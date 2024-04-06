@@ -26,6 +26,10 @@
   height: 100vh;
 }
 
+.treeCard {
+  margin: 2em;
+}
+
 .default-theme {
   color: teal;
 }

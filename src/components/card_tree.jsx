@@ -6,14 +6,22 @@ import {
     CardActions, 
     Button,
     CardMedia,
-} from "@mui/material"
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import '../App.css';
 
-import photo_1 from '../assets/photo_1.jpeg'
+import photo_1 from '../assets/photo_1.jpeg';
 
 function TreeCard(){
+    let navigateTo = useNavigate();
+
+    function handleMoreClick() {
+        navigateTo('content');
+    }
+
     return (
         <Box width='300px'>
-            <Card>
+            <Card className="treeCard">
                 <CardMedia
                     component='img'
                     height="140px"
@@ -40,7 +48,7 @@ function TreeCard(){
                 </CardContent>
                 <CardActions>
                     <Button size="small">Share</Button>
-                    <Button size="small">Learn More</Button>
+                    <Button size="small" onClick={handleMoreClick}>Learn More</Button>
                 </CardActions>
             </Card>
         </Box>

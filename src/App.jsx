@@ -3,7 +3,6 @@
 // import viteLogo from '/vite.svg'
 import './App.css'
 
-import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import { ThemeProvider, createTheme, alpha, getContrastRatio} from '@mui/material/styles'
 

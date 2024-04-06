@@ -1,11 +1,19 @@
 import React from "react";
 import "../App.css"
 import { 
-    Box, 
+    Box,
+    Button,
     AppBar, 
-    Toolbar, 
+    Toolbar,
+    Drawer,
     IconButton, 
-    Typography 
+    Typography, 
+    Divider,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    CssBaseline,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu"
 import HomeIcon from "@mui/icons-material/Home"
@@ -16,24 +24,36 @@ const navItems = ['被子植物 (Magnoliophyta)',
                   '地錢 (Marchantiophyta)',
                   '苔類植物 (Bryophyta)'];
 
-function DrawerAppBar(props){
-    const { window } = props;
+function TopNavBar(props) {
+
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
-    };
+    const toggleDrawer = (newOpen) => () => {
+        setMobileOpen(newOpen);
+      };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            
+        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+            <Typography varian="6" sx={{ my:2 }}>
+                Tree
+            </Typography>
+            <Divider/>
+            <List>
+                {navItems.map((item) => (
+                    <ListItem key={item} disablePadding>
+                    <ListItemButton sx={{ testAlign: 'center' }}>
+                        <ListItemText primary={item} />
+                    </ListItemButton>
+                    </ListItem>
+                ))}
+            </List>
         </Box>
     );
-}
 
-function TopNavBar() {
     return (
+        <>
         <Box sx={{ flexGrow:1 }}>
+            <CssBaseline/>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton 
@@ -41,12 +61,13 @@ function TopNavBar() {
                         edge="start"
                         color="inherit"
                         aria-label="menu"
+                        onClick={toggleDrawer(true)}
                         sx={{mr:1}}
                         >
                             <MenuIcon/>
                     </IconButton>
                     <Typography variant="h5" component="div" sx={{flexGrow:1}}>
-                        Trees
+                        Blog
                     </Typography>
                     <IconButton 
                         size="large"
@@ -60,6 +81,13 @@ function TopNavBar() {
                 </Toolbar>
             </AppBar>
         </Box>
+
+        <Drawer 
+            open={mobileOpen}
+            onClose={toggleDrawer(false)}>
+            {drawer}
+        </Drawer>
+        </>
     )
 }
 
