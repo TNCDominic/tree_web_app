@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css"
+import '../App.css'
 import { 
     Box,
     Button,
@@ -51,7 +51,7 @@ function TopNavBar(props) {
     );
 
     return (
-        <>
+        <div className="header">
         <Box sx={{ flexGrow:1 }}>
             <CssBaseline/>
             <AppBar position="static">
@@ -87,7 +87,7 @@ function TopNavBar(props) {
             onClose={toggleDrawer(false)}>
             {drawer}
         </Drawer>
-        </>
+        </div>
     )
 }
 
