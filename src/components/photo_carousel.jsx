@@ -6,16 +6,16 @@ import styled from '@emotion/styled'
 function PhotoSlide(props){
     var items = [
         {
-            img_src: 'image/Saraca_Indica/photo_1.jpeg'
+            img_src: '/image/Saraca_Indica/photo_1.jpeg'
         },
         {
-            img_src: 'image/Saraca_Indica/photo_2.jpeg'
+            img_src: '/image/Saraca_Indica/photo_2.jpeg'
         },
         {
-            img_src: 'image/Saraca_Indica/photo_3.jpeg'
+            img_src: '/image/Saraca_Indica/photo_3.jpeg'
         },
         {
-            img_src: 'image/Saraca_Indica/photo_4.jpeg'
+            img_src: '/image/Saraca_Indica/photo_4.jpeg'
         }
     ]
     
