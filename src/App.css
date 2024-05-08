@@ -14,3 +14,7 @@
 .default-theme {
   color: teal;
 }
+
+.icon_button:focus {
+    outline: none;
+}

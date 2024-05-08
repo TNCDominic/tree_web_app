@@ -5,3 +5,10 @@
 .blogtext_box {
     padding: 2%;
 }
+
+@media screen and (max-width: 720px) {
+    .flexgrid{
+      flex-direction: column-reverse
+    }
+    
+  }

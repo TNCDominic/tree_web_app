@@ -15,8 +15,11 @@ import {
     ListItemText,
     CssBaseline,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu"
-import HomeIcon from "@mui/icons-material/Home"
+import MenuIcon from "@mui/icons-material/Menu";
+import HomeIcon from "@mui/icons-material/Home";
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { ThemeProvider } from "@emotion/react";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 const navItems = ['被子植物 (Magnoliophyta)', 
@@ -25,13 +28,13 @@ const navItems = ['被子植物 (Magnoliophyta)',
                   '苔類植物 (Bryophyta)'];
 
 function TopNavBar(props) {
-
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
+    const [mobileOpen, setMobileOpen] = React.useState(false)
+    const navigateToParent = (path) => {
+        window.location.href = path
+      };
     const toggleDrawer = (newOpen) => () => {
         setMobileOpen(newOpen);
       };
-
     const drawer = (
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
             <Typography varian="6" sx={{ my:2 }}>
@@ -50,6 +53,9 @@ function TopNavBar(props) {
         </Box>
     );
 
+    let font_theme = createTheme();
+    font_theme = responsiveFontSizes(font_theme);
+
     return (
         <div className="header">
         <Box sx={{ flexGrow:1 }}>
@@ -57,6 +63,7 @@ function TopNavBar(props) {
             <AppBar position="static">
                 <Toolbar>
                     <IconButton 
+                        className='icon_button'
                         size="large"
                         edge="start"
                         color="inherit"
@@ -66,15 +73,19 @@ function TopNavBar(props) {
                         >
                             <MenuIcon/>
                     </IconButton>
+                    <ThemeProvider theme={font_theme}>
                     <Typography variant="h5" component="div" sx={{flexGrow:1}}>
                         Blog
                     </Typography>
+                    </ThemeProvider>
                     <IconButton 
+                        className='icon_button'
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
                         sx={{mr:2}}
+                        onClick={()=>navigateToParent('/')}
                         >
                             <HomeIcon/>
                     </IconButton>

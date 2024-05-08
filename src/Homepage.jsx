@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import ImageOverlay from './components/overlayImage';
 import Grid from '@mui/material/Grid'
 import { Typography } from "@mui/material";
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { ThemeProvider } from "@emotion/react";
 import './css/Homepage.css'
 import { useNavigate } from "react-router-dom";
 
@@ -30,6 +32,10 @@ function Homepage () {
     function routeChange(path){
         navigateTo(path);
     }
+
+    let font_theme = createTheme();
+    font_theme = responsiveFontSizes(font_theme);
+
     return (
         <>
         
@@ -47,9 +53,12 @@ function Homepage () {
             // justifyContent: 'center',
             alignItems: 'center'
         }}>
-            <Typography variant="h1" color="#FFFFFF">
-                Learn <br/> Everythings <br/> About Trees
-            </Typography>
+
+            <ThemeProvider theme={font_theme}>
+                <Typography variant="h1" color="#FFFFFF">
+                    Learn <br/> Everythings <br/> About Trees
+                </Typography>
+            </ThemeProvider>
         </div>
         
         <Grid container layout={'row'} sx ={{padding:'1%'}}> 

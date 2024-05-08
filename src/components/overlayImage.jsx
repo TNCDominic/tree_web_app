@@ -13,7 +13,9 @@ function ImageOverlay (props) {
     }
 
     return (
-        <div className="image_overlay_container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className="image_overlay_container" 
+             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+             onTouchStart={handleMouseEnter} onTouchEnd={handleMouseLeave}>
             <img src={props.img} style={{height: '400px'}} ></img>
             <div className="overlay" style={{width: overlayWidth}}>
                 <div className="imagetext" style={{width:'inherit', 
