@@ -7,7 +7,7 @@ export const theme = createTheme({
   palette:{
     primary: {
       main: tealMain,
-      light: alpha(tealMain, 0.5),
+      light: alpha(tealMain, 0.3),
       dark: alpha(tealMain, 0.9),
       blogTextbg: "#F4F2DE",
       contrastText: getContrastRatio(tealMain, '#fff') > 4.5 ? '#fff' : '#111',

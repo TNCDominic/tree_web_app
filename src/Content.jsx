@@ -13,7 +13,7 @@ function blogContent(){
     return(
     <>
         <ThemeProvider theme = {theme}>
-            <TopNavBar/>
+            <TopNavBar title={"Blog"}/>
 
             <Grid container layout={'row'} sx={{paddingTop:'2%', paddingLeft:'2%', paddingRight:'2%', height:'100px'}}>
                 <Grid item xs={12} sm={6} md={8} order={{ xs: 2, sm: 1 }}>

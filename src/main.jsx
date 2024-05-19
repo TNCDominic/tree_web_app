@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import Homepage from './Homepage.jsx'
 import BlogContent from './Content.jsx';
+import PracticeHome from './PracticeHome.jsx';
 import './index.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -14,6 +15,8 @@ ReactDOM.render(
         <Route path="/" element={<Homepage/>}/>
         <Route path="blogs" element={<App/>}/>
         <Route path="blogs/content" element={<BlogContent/>}/>
+
+        <Route path="isaexam" element={<PracticeHome/>}/>
       </Routes>
     </main>
   </BrowserRouter>

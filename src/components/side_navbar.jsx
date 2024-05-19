@@ -27,7 +27,7 @@ const navItems = ['被子植物 (Magnoliophyta)',
                   '地錢 (Marchantiophyta)',
                   '苔類植物 (Bryophyta)'];
 
-function TopNavBar(props) {
+function TopNavBar({title}) {
     const [mobileOpen, setMobileOpen] = React.useState(false)
     const navigateToParent = (path) => {
         window.location.href = path
@@ -37,14 +37,14 @@ function TopNavBar(props) {
       };
     const drawer = (
         <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
-            <Typography varian="6" sx={{ my:2 }}>
-                Tree
+            <Typography variant="h6" sx={{ my:2, textAlign:'center'}}>
+                Category
             </Typography>
             <Divider/>
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                    <ListItemButton sx={{ testAlign: 'center' }}>
+                    <ListItemButton sx={{ textAlign: 'center' }}>
                         <ListItemText primary={item} />
                     </ListItemButton>
                     </ListItem>
@@ -57,7 +57,7 @@ function TopNavBar(props) {
     font_theme = responsiveFontSizes(font_theme);
 
     return (
-        <div className="header">
+    <div className="header">
         <Box sx={{ flexGrow:1 }}>
             <CssBaseline/>
             <AppBar position="static">
@@ -75,7 +75,7 @@ function TopNavBar(props) {
                     </IconButton>
                     <ThemeProvider theme={font_theme}>
                     <Typography variant="h5" component="div" sx={{flexGrow:1}}>
-                        Blog
+                        {title}
                     </Typography>
                     </ThemeProvider>
                     <IconButton 
@@ -98,7 +98,7 @@ function TopNavBar(props) {
             onClose={toggleDrawer(false)}>
             {drawer}
         </Drawer>
-        </div>
+    </div>
     )
 }
 

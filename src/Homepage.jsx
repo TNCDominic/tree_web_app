@@ -63,7 +63,7 @@ function Homepage () {
         
         <Grid container layout={'row'} sx ={{padding:'1%'}}> 
             <Grid item xs={12} sm={6} md={6} sx ={{display:'flex', justifyContent:'space-around', marginTop:'2%'}}>
-                <button className='homepage_button' type='button'>
+                <button className='homepage_button' type='button' onClick={() => routeChange('isaexam')}>
                 <ImageOverlay img='image/ISAAssessment.jpg' img_text={isa_text}/>
                 </button>
             </Grid>

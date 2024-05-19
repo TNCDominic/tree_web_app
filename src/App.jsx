@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <TopNavBar/>
+        <TopNavBar title={"Blog"}/>
         <TreeCard/>
         <Footer/>
       </ThemeProvider>

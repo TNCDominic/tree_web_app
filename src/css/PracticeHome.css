@@ -1,0 +1,14 @@
+.q_choice {
+    padding:'5%';
+    width: 100%;
+    height: 100%;
+}
+
+.q_choice:focus {
+    outline: none;
+}
+
+.q_choice:hover {
+    background-color: #ECFADC;
+    border: 2px solid #CDEBC5;
+}
